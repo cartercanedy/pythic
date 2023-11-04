@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Pythic"
+authors = [
+  { name="Carter Canedy", email="cartercanedy42@gmail.com" },
+]
+description = "Probably the start of a really interesting library."
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+dynamic = [ "version" ]
+
+[tool.hatch.version]
+path = "src/pythic/__version__.py"
+
+[tool.hatch.build]
+sources = [ "src" ]
+exclude = [ "*" ]
+include = [ "src/pythic/*" ]
+directory = "./build"
+artifacts = [ "src/pythic/*.so" ]
