@@ -14,6 +14,7 @@ set(CMAKE_C_FLAGS "-O3")
 add_library(pythic SHARED ${SOURCES})
 set_target_properties(pythic PROPERTIES PREFIX "")
 target_include_directories(pythic PUBLIC include)
+target_include_directories(pythic PUBLIC "${PYTHON_DIR}")
 target_include_directories(pythic PUBLIC "${PROJECT_BINARY_DIR}")
 
 configure_file(include/pythicConfig.h.in include/pythicConfig.h)
