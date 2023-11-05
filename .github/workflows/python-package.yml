@@ -26,11 +26,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        export PYTHON_DIR="$(which python | sed 's/bin\/python/include/')"
         python -m pip install --upgrade pip
         sudo apt-get install cmake ninja-build -y
     - name: Build native
       run: |
+        PYTHON_DIR="$(which python | sed 's/bin\/python/include/')"
+        echo $PYTHON_DIR
+        ls -al $PYTHON_DIR
         cmake -DPYTHON_VERSION=${{ matrix.python-version }} -DPYTHON_DIR=$PYTHON_DIR . -G Ninja
         ninja
     - name: install built package & test
