@@ -26,6 +26,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        which python
         python -m pip install --upgrade pip
         sudo apt-get install cmake ninja-build python3-dev -y
         ls -al /usr/include
