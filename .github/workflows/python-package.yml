@@ -28,9 +28,7 @@ jobs:
       run: |
         export PYTHON_DIR="$(which python | sed 's/bin\/python/include/')"
         python -m pip install --upgrade pip
-        sudo apt-get install cmake ninja-build python3-dev -y
-        ls -al /usr/include
-        ls -al /usr/local/include
+        sudo apt-get install cmake ninja-build -y
     - name: Build native
       run: |
         cmake -DPYTHON_VERSION=${{ matrix.python-version }} -DPYTHON_DIR=$PYTHON_DIR . -G Ninja
