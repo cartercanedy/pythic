@@ -12,5 +12,5 @@ how = lambda x: x.hello
 
 glob = globals()
 
-print( timeit.timeit( "select( inp_list , how )" , number = 100000 , globals = glob ) )
-print( timeit.timeit( "pth.select( inp_list , how )" , number = 100000 , globals = glob ) )
+print( f"Pure python implementation: { timeit.timeit( 'select( inp_list , how )' , number = 10000 , globals = glob ) }" )
+print( f"C implentation: { timeit.timeit( 'pth.select( inp_list , how )' , number = 10000 , globals = glob ) }" )
