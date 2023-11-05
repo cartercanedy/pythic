@@ -31,7 +31,7 @@ jobs:
     - name: Build native
       run: |
         PYTHON_DIR="$(which python | sed 's/bin\/python/include/')"
-        PYTHON_VERSION="$(python -c \"import sys; ver = sys.version.split( '.' )[ : 2 ]; print( '.'.join( ver ) )\")"
+        PYTHON_VERSION=$(python -c "import sys; ver = sys.version.split( '.' )[ : 2 ]; print( '.'.join( ver ) )")
         cmake -DPYTHON_VERSION=$PYTHON_VERSION -DPYTHON_DIR=$PYTHON_DIR . -G Ninja
         ninja
     - name: install built package & test
