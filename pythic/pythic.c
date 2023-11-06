@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include "pythicConfig.h"
-
-#define PY_EXC PyExc_Exception
-#define RAISE_MSG_IF( cond , exc_msg ) if ((cond)) { PyErr_SetString( PY_EXC , (exc_msg) ); return NULL; }
-#define RAISE_IF( cond ) RAISE_MSG_IF( cond , "An internal error occurred" )
+#include "pythicConfig.h" 
 
 static PyObject *
 pythic_select( PyObject *self , PyObject *args , PyObject *kwargs )
