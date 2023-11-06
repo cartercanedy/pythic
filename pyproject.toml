@@ -3,11 +3,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Pythic"
+name = "pythic"
 authors = [
   { name="Carter Canedy", email="cartercanedy42@gmail.com" },
 ]
-description = "Probably the start of a really interesting library."
+description = "Lightweight and simple data querying algorithms implemented in C."
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
