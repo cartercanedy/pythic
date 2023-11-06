@@ -54,7 +54,7 @@ static struct PyModuleDef pythicmodule = {
 };
 
 PyMODINIT_FUNC
-PyInit_pythic( void )
+PyInit__pythic( void )
 {
   return PyModule_Create( &pythicmodule );
 }

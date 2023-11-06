@@ -20,7 +20,6 @@ path = "src/pythic/__version__.py"
 
 [tool.hatch.build]
 sources = [ "src" ]
-exclude = [ "*" ]
-include = [ "src/pythic" , "src/pythic/*" , "src/pythic/_pythic.so" ]
+exclude = [ "_core" ]
 directory = "./build"
-artifacts = [ "src/pythic/_pythic.so" ]
+artifacts = [ "**.so" ]
