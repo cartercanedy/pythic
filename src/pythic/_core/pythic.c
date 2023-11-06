@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "pythicConfig.h" 
+#include "pythicConfig.h"
+#include "pythic.h" 
 
 static PyObject *
 pythic_select( PyObject *self , PyObject *args , PyObject *kwargs )

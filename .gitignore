@@ -17,3 +17,4 @@ _deps
 build
 **.so
 src/pythic/_core/pythicConfig.h
+.vscode
