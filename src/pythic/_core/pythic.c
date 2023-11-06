@@ -42,7 +42,7 @@ pythic_select( PyObject *self , PyObject *args , PyObject *kwargs )
 static PyMethodDef pythicMethods[] = {
   {
     "select" ,
-    (PyCFunction)pythic_select,
+    (PyCFunctionWithKeywords)pythic_select,
 	  METH_VARARGS | METH_KEYWORDS,
 	  "Return a sequence that contains the operation specified applied to all constituents of the input sequence"
   },

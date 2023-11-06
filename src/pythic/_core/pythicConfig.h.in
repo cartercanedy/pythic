@@ -1,0 +1,6 @@
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
+#include <methodobject.h>
+#include <object.h>
+#include <abstract.h>
+#include <pyerrors.h>

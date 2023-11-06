@@ -30,8 +30,9 @@ jobs:
         sudo apt-get install cmake ninja-build -y
     - name: Build native
       run: |
-        cmake -DPYTHON_VERSION=${{ matrix.python-version }} . -G Ninja
-        ninja
+        PY_INC="$(which python | sed 's/bin\/python/include\/python${{ matrix.python-version }}/')"
+        cmake -DPY_INCLUDE_DIR=$PY_INC .
+        make
     - name: install built package & test
       run: |
         python -m pip install . && python ./test.py

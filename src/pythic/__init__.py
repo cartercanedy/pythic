@@ -1,1 +1,1 @@
-from . import Pythic as pythic
+from . import _core
