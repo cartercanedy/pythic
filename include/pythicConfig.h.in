@@ -1,6 +1,11 @@
+#pragma once
 #define PY_SSIZE_T_CLEAN
 #include <python@PYTHON_VERSION@/Python.h>
 #include <python@PYTHON_VERSION@/methodobject.h>
 #include <python@PYTHON_VERSION@/object.h>
 #include <python@PYTHON_VERSION@/abstract.h>
 #include <python@PYTHON_VERSION@/pyerrors.h>
+
+#define PY_EXC PyExc_Exception
+#define RAISE_MSG_IF( cond , msg ) if ((cond)) { if (!PyErr_Occurred()) PyErr_SetString( PY_EXC , ( msg ) ); return NULL; }
+#define RAISE_IF( cond ) RAISE_MSG_IF( cond , "An internal error occurred." )
