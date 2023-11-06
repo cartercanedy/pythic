@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "pythicConfig.h" 
+#include "pythicConfig.h"
+#include "pythic.h" 
 
 static PyObject *
 pythic_select( PyObject *self , PyObject *args , PyObject *kwargs )
@@ -54,7 +55,7 @@ static struct PyModuleDef pythicmodule = {
 };
 
 PyMODINIT_FUNC
-PyInit_pythic( void )
+PyInit__pythic( void )
 {
   return PyModule_Create( &pythicmodule );
 }

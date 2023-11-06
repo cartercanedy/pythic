@@ -1,5 +1,5 @@
 import timeit
-from pythic import pythic as pth
+import pythic as pth
 
 def select( frm , how ):
     return [ how( frm[ i ] ) for i in range( len( frm ) ) ]

@@ -13,3 +13,8 @@ CTestTestfile.cmake
 .ninja_*
 ninja.build
 _deps
+.cmake
+build
+**.so
+src/pythic/_core/pythicConfig.h
+.vscode
