@@ -9,7 +9,7 @@ set(SOURCES pythic/pythic.c)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY src/pythic)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY src/pythic)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY src/pythic)
-set(CMAKE_C_FLAGS "-O3")
+set(CMAKE_C_FLAGS "-fno-semantic-interposition -Wall -Wextra -O3")
 
 add_library(pythic SHARED ${SOURCES})
 set_target_properties(pythic PROPERTIES PREFIX "")
