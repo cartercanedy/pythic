@@ -5,7 +5,7 @@ from typing import (
 )
 from sys import version_info
 
-if version_info.major == 3 and version_info.minor > 12:
+if version_info.major == 3 and version_info.minor >= 12:
     def select[ TIn , TOut ]( frm : Sequence[ TIn ] , how : Callable[ [ TIn ] , TOut ] ) -> List[ TOut ]: ...
 else:
     from typing import TypeVar
