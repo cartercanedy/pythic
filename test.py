@@ -4,13 +4,11 @@ import pythic as pth
 def select( frm , how ):
     return [ how( frm[ i ] ) for i in range( len( frm ) ) ]
 
-class CClass:
-    def __init__( self ): self.hello = "world"
+class Foo:
+    def __init__( self ): self.bar = "Baz"
 
-inp_list = [ CClass() for i in range( 1000 ) ]
-how = lambda x: x.hello
+inp = [ Foo() for i in range( 1000 ) ]
+how = lambda x: x.bar
 
-glob = globals()
-
-print( f"Pure python implementation: { timeit.timeit( 'select( inp_list , how )' , number = 10000 , globals = glob ) }" )
-print( f"C implentation: { timeit.timeit( 'pth.select( inp_list , how )' , number = 10000 , globals = glob ) }" )
+print( f"Pure python implementation: { timeit.timeit( 'select( inp , how )' , number = 10000 , globals = globals() ) }" )
+print( f"C implentation: { timeit.timeit( 'pth.select( inp , how )' , number = 10000 , globals = globals() ) }" )
